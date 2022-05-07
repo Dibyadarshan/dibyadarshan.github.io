@@ -23,7 +23,7 @@ Both the envelopes are identical in every way. Switching shouldn't make any diff
 
 It doesn't matter whether you switch or not, the chances are 50:50.
 
-Maybe you are right, but give me a chance to chance to explain!
+Maybe you are right, but give me a chance to explain!
 
 #### Reasoning #2
 Suppose you picked `Envelope A` which contained &#8377;X. `Envelope B` could contain either &#8377;X/2 or &#8377;2X. Both of these are equally likely. Therefore, the expected value would be
@@ -80,7 +80,7 @@ return {radius*cos(theta), radius*sin(theta)};
 ```
 Ah, the elegance! I smugly resumed the video.
 
-This algorithm was faulty. Each radius [0, 1] has an equal probability of being picked. Imagine that every radius is mapped to a concentric ring. So, we basically pick a ring (via `radius`) and then pick a point on its circumference (via`theta`). 
+This algorithm was faulty. Each radius [0, 1] has an equal probability of being picked. Imagine that every radius is mapped to a concentric ring. So, we basically pick a ring (via `radius`) and then pick a point on its circumference (via `theta`). 
 
 Now, the probability of any ring being picked is the same. But the rings with higher radius have a lot more points in the circumference, so ideally they should be chosen more often. 
 
