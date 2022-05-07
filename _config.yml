@@ -62,6 +62,7 @@ permalink: /:year/:month/:day/:title/
 markdown: kramdown
 excerpt_separator: "<!-- more -->"
 kramdown:
+  math_engine: katex
   auto_ids: false
   enable_coderay: false
   entity_output: as_char
