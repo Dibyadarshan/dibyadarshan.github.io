@@ -55,7 +55,7 @@ Here is an _even more_ surprising variant.
 
 I came across this problem while watching a video in `The Summer of Math Exposition` playlist.
 
-> You are given a perfectly uniform random number generator `rng`. Devise an algorithm to pick a random to pick a random point within a unit circle.
+> You are given a perfectly uniform random number generator `rng`. Devise an algorithm to pick a random point within a unit circle.
 
 I paused the video and tried to come up with the solution.
 
