@@ -39,13 +39,15 @@ One observation: Suppose `Reasoning #2` were correct. After you switch the envel
 
 This is absurd and further cements `Reasoning #1`. But this still doesn't explain what is wrong with `Reasoning #2`.
 
-The problem with `Reasoning #2` is, when we say `Envelope B` has more money, the possible values for `Envelope A` & `Envelope B` are in the set {&#8377;X, &#8377;2X}. When we say `Envelope B` has less money, the set is {&#8377;X, &#8377;X/2}. So, we are essentially picking a value for `Envelope B` from different sample space in the equation above.
+The problem with `Reasoning #2` is, when we say `Envelope B` has more money, the possible values for `Envelope A` & `Envelope B` are in the set {&#8377;X, &#8377;2X}. When we say `Envelope B` has less money, the set is {&#8377;X, &#8377;X/2}. Hence, in the equation above, the meaning of X is different in &#8377;X/2 and &#8377;2X.
 
-Hence, look at it this way. `Envelope B` either has more money or it has less money (duh!). So, the two cases are
+Look at it this way. `Envelope B` either has more money or it has less money (duh!). So, the two cases are
 - `Envelope A` has &#8377;Y and `Envelope B` has &#8377;2Y.
 - `Envelope A` has &#8377;2Y and `Envelope B` has &#8377;Y.
 
 This way the expected value is the same with or without switching, &#8377;3/2Y. Which is consistent with `Reasoning #1`!
+
+Now, if the set {&#8377;X, &#8377;X/2} is correct we get Y=X/2. For the set {&#8377;X, &#8377;2X} we get Y=X. This inconsistency proves that the meaning of X is different in &#8377;X/2 and &#8377;2X. Thus, they can't be added as we did in expected value calculation. 
 
 Here is an _even more_ surprising variant. 
 
