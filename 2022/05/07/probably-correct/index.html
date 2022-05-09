@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    
+    
+    <title>Probably correct</title>
+    <meta name="description" content="Some problems in probability (and other related areas) could be challenging because using multiple seemingly correct approaches and your intuition could be at odds, each giving very different results. Here are some interesting problems.">
+    
+
+    <link rel="stylesheet" href="/assets/main.css">
+    <link rel="canonical" href="https://dibyadarshan.github.io/2022/05/07/probably-correct/">
+    
+    
+    <link rel="alternate" type="application/rss+xml" title="Dibyadarshan Hota"
+        href="https://dibyadarshan.github.io/feed.xml">
+
+    
+
+    
+    <meta property="og:title" content="Probably correct">
+    <meta property="og:site_name" content="Dibyadarshan Hota">
+    <meta property="og:url" content="https://dibyadarshan.github.io/2022/05/07/probably-correct/">
+    <meta property="og:description" content="Some problems in probability (and other related areas) could be challenging because using multiple seemingly correct approaches and your intuition could be at odds, each giving very different results. Here are some interesting problems.">
+    
+    
+    <meta name="twitter:card" content=" summary">
+    
+    <meta name="twitter:title" content="Probably correct">
+    <meta name="twitter:description" content="Some problems in probability (and other related areas) could be challenging because using multiple seemingly correct approaches and your intuition could be at odds, each giving very different resul...">
+    
+    
+
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet">
+
+    
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css"
+        integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.js"
+        integrity="sha384-9Nhn55MVVN0/4OFx7EE5kpFBPsEMZxKTCnA+4fqDmg12eCTqGi6+BB2LjY8brQxJ"
+        crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/contrib/auto-render.min.js"
+        integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+</head>
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">Dibyadarshan Hota</a>
+
+    <nav class="site-nav">
+      
+        
+        <a class="page-link" href="/about/">About</a>
+      
+        
+        <a class="page-link" href="/archives/">Archives</a>
+      
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    
+      <h1 class="post-title" itemprop="name headline">Probably correct</h1>
+    
+    <p class="post-meta"><time datetime="2022-05-07T00:00:00+05:30" itemprop="datePublished">May 7, 2022</time> •
+  
+    
+    
+      
+    
+      
+    
+      
+        <a href="/categories/probability/">probability</a>
+      
+    
+  
+
+
+ •
+  
+    
+    
+      
+        <a href="/tags/math/">math</a>,
+      
+    
+      
+    
+      
+    
+  
+    
+    
+      
+    
+      
+        <a href="/tags/cs/">cs</a>
+      
+    
+      
+    
+  
+
+</p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>Some problems in probability (and other related areas) could be challenging because using multiple seemingly correct approaches and your intuition could be at odds, each giving <em>very different</em> results. Here are some interesting problems.</p>
+
+<!-- more -->
+
+<h3>Two envelopes problem</h3>
+
+<blockquote>
+  <p>Imagine you are given two identical envelopes, each containing money. One contains twice as much as the other. You may pick one envelope and keep the money it contains. Having chosen an envelope at will, but before inspecting it, you are given the chance to switch envelopes. Should you switch?</p>
+</blockquote>
+
+<h4>Reasoning #1</h4>
+<p>Intuitively, the problem might seem a little silly at first. <em>What difference could it possible make?</em></p>
+
+<p>Both the envelopes are identical in every way. Switching shouldn’t make any difference since the whole situation is symmetric.</p>
+
+<p>It doesn’t matter whether you switch or not, the chances are 50:50.</p>
+
+<p>Maybe you are right, but give me a chance to explain!</p>
+
+<h4>Reasoning #2</h4>
+<p>Suppose you picked <code class="language-plaintext highlighter-rouge">Envelope A</code> which contained ₹X. <code class="language-plaintext highlighter-rouge">Envelope B</code> could contain either ₹X/2 or ₹2X. Both of these are equally likely. Therefore, the expected value would be</p>
+
+\[0.5 * \frac X 2 + 0.5 * 2X = 1.25X\]
+
+<p>₹1.25X &gt; ₹X. Expected value is higher on switching!</p>
+
+<h4>Reconciliation</h4>
+<p>So, which is it exactly?</p>
+
+<p>One observation: Suppose <code class="language-plaintext highlighter-rouge">Reasoning #2</code> were correct. After you switch the envelopes once, the other envelope is more desirable (by the same expected-value calculation). So, you were better off in the first place.</p>
+
+<p>This is absurd and further cements <code class="language-plaintext highlighter-rouge">Reasoning #1</code>. But this still doesn’t explain what is wrong with <code class="language-plaintext highlighter-rouge">Reasoning #2</code>.</p>
+
+<p>The problem with <code class="language-plaintext highlighter-rouge">Reasoning #2</code> is, when we say <code class="language-plaintext highlighter-rouge">Envelope B</code> has more money, the possible values for <code class="language-plaintext highlighter-rouge">Envelope A</code> &amp; <code class="language-plaintext highlighter-rouge">Envelope B</code> are in the set {₹X, ₹2X}. When we say <code class="language-plaintext highlighter-rouge">Envelope B</code> has less money, the set is {₹X, ₹X/2}. Hence, in the equation above, the meaning of X is different in ₹X/2 and ₹2X.</p>
+
+<p>Look at it this way. <code class="language-plaintext highlighter-rouge">Envelope B</code> either has more money or it has less money (duh!). So, the two cases are</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Envelope A</code> has ₹Y and <code class="language-plaintext highlighter-rouge">Envelope B</code> has ₹2Y.</li>
+  <li><code class="language-plaintext highlighter-rouge">Envelope A</code> has ₹2Y and <code class="language-plaintext highlighter-rouge">Envelope B</code> has ₹Y.</li>
+</ul>
+
+<p>This way the expected value is the same with or without switching, ₹3/2Y. Which is consistent with <code class="language-plaintext highlighter-rouge">Reasoning #1</code>!</p>
+
+<p>Now, if the set {₹X, ₹X/2} is correct we get Y=X/2. For the set {₹X, ₹2X} we get Y=X. This inconsistency proves that the meaning of X is different in ₹X/2 and ₹2X. Thus, they can’t be added as we did in expected value calculation.</p>
+
+<p>Here is an <em>even more</em> surprising variant.</p>
+
+<blockquote>
+  <p>What happens when you are allowed to inspect the contents of the envelope you choose first?</p>
+</blockquote>
+
+<h3>Random point in a circle</h3>
+
+<p>I came across this problem while watching a video in <code class="language-plaintext highlighter-rouge">The Summer of Math Exposition</code> playlist.</p>
+
+<blockquote>
+  <p>You are given a perfectly uniform random number generator <code class="language-plaintext highlighter-rouge">rng</code>. Devise an algorithm to pick a random point within a unit circle.</p>
+</blockquote>
+
+<p>I paused the video and tried to come up with the solution.</p>
+
+<p>First, I thought of placing unit circle in a plane centered at \((0,0)\). Then I came up with the easiest possible solution.</p>
+
+<pre><code class="language-C++">while (true) {
+  double x = rng(-1, 1);
+  double y = rng(-1, 1);
+  if ((x*x + y*y) &lt;= 1.0) {
+    return {x, y};
+  }
+}
+</code></pre>
+<p>But I could overshoot the circle and land on fringes of the square. Probability of that would be \(\frac {4-\pi} 4\). Over a number of iterations that would tend to 0 but still, it isn’t perfect.</p>
+
+<p>Then, I thought of leveraging \((r, \theta)\) representation.</p>
+<pre><code class="language-C++">double radius = rng(0, 1);
+double theta = rng(0, 360);
+return {radius*cos(theta), radius*sin(theta)};
+</code></pre>
+<p>Ah, the elegance! I smugly resumed the video.</p>
+
+<p>This algorithm was faulty. Each radius [0, 1] has an equal probability of being picked. Imagine that every radius is mapped to a concentric ring. So, we basically pick a ring (via <code class="language-plaintext highlighter-rouge">radius</code>) and then pick a point on its circumference (via <code class="language-plaintext highlighter-rouge">theta</code>).</p>
+
+<p>Now, the probability of any ring being picked is the same. But the rings with higher radius have a lot more points in the circumference, so ideally they should be chosen more often.</p>
+
+<p>In other words, the points chosen by this algorithm will be concentrated to the center.</p>
+
+<p>nubDotDev <a href="https://youtu.be/4y_nmpv-9lI">proposed</a> an ingenious approach of converting the uniform <code class="language-plaintext highlighter-rouge">rng</code> to a non-uniform <code class="language-plaintext highlighter-rouge">rng</code>, that way the rings father away have a higher probability of being picked.</p>
+
+<p>Moral: Be careful while calculating probabilities in an infinite sample space.</p>
+
+<h3>Other paradoxes</h3>
+
+<ul>
+  <li>Bertrand posed a problem in his book, “What is the probability that a chord in unit circle is larger than \(\sqrt 3\)?”. The problem setting is straightforward and yet multiple <a href="https://youtu.be/mZBwsm6B280">simple solutions</a> yield different answers, it is baffling! Calculating probabilities in infinite sample space is hard indeed.</li>
+  <li>The most classic probability paradox - <a href="https://en.wikipedia.org/wiki/Monty_Hall_problem">Monty Hall problem</a>. Even mathematicians of Paul Erdos’ calibre had a hard time wrapping their head around a problem popularized by a magazine column!</li>
+</ul>
+
+<h3>References</h3>
+<ul>
+  <li><a href="https://en.wikipedia.org/wiki/Category:Probability_theory_paradoxes">Wikipedia Category: Probability theory paradoxes</a></li>
+</ul>
+
+  </div>
+
+  
+
+</article>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <p>
+      
+
+&copy; Dibyadarshan - Powered by <a href="https://jekyllrb.com">Jekyll</a> &amp; <a href="https://github.com/yous/whiteglass">whiteglass</a> - Subscribe via <a href="https://dibyadarshan.github.io/feed.xml">RSS</a>
+
+    </p>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>

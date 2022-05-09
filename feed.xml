@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <generator uri="http://jekyllrb.com" version="3.9.2">Jekyll</generator>
+  
+  
+  <link href="https://dibyadarshan.github.io/feed.xml" rel="self" type="application/atom+xml" />
+  <link href="https://dibyadarshan.github.io/" rel="alternate" type="text/html" />
+  <updated>2022-05-09T19:53:42+05:30</updated>
+  <id>https://dibyadarshan.github.io//</id>
+
+  
+    <title type="html">Dibyadarshan Hota</title>
+  
+
+  
+    <subtitle>Personal website of Dibyadarshan.</subtitle>
+  
+
+  
+    <author>
+        <name>Dibyadarshan</name>
+      
+      
+    </author>
+  
+
+  
+  
+    <entry>
+      
+      <title type="html">Probably correct</title>
+      
+      
+      <link href="https://dibyadarshan.github.io/2022/05/07/probably-correct/" rel="alternate" type="text/html" title="Probably correct" />
+      
+      <published>2022-05-07T00:00:00+05:30</published>
+      <updated>2022-05-07T00:00:00+05:30</updated>
+      <id>https://dibyadarshan.github.io/2022/05/07/probably-correct</id>
+      <content type="html" xml:base="https://dibyadarshan.github.io/2022/05/07/probably-correct/">&lt;p&gt;Some problems in probability (and other related areas) could be challenging because using multiple seemingly correct approaches and your intuition could be at odds, each giving &lt;em&gt;very different&lt;/em&gt; results. Here are some interesting problems.&lt;/p&gt;
+
+&lt;!-- more --&gt;
+
+&lt;h3&gt;Two envelopes problem&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Imagine you are given two identical envelopes, each containing money. One contains twice as much as the other. You may pick one envelope and keep the money it contains. Having chosen an envelope at will, but before inspecting it, you are given the chance to switch envelopes. Should you switch?&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4&gt;Reasoning #1&lt;/h4&gt;
+&lt;p&gt;Intuitively, the problem might seem a little silly at first. &lt;em&gt;What difference could it possible make?&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Both the envelopes are identical in every way. Switching shouldn’t make any difference since the whole situation is symmetric.&lt;/p&gt;
+
+&lt;p&gt;It doesn’t matter whether you switch or not, the chances are 50:50.&lt;/p&gt;
+
+&lt;p&gt;Maybe you are right, but give me a chance to explain!&lt;/p&gt;
+
+&lt;h4&gt;Reasoning #2&lt;/h4&gt;
+&lt;p&gt;Suppose you picked &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Envelope A&lt;/code&gt; which contained ₹X. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Envelope B&lt;/code&gt; could contain either ₹X/2 or ₹2X. Both of these are equally likely. Therefore, the expected value would be&lt;/p&gt;
+
+\[0.5 * \frac X 2 + 0.5 * 2X = 1.25X\]
+
+&lt;p&gt;₹1.25X &amp;gt; ₹X. Expected value is higher on switching!&lt;/p&gt;
+
+&lt;h4&gt;Reconciliation&lt;/h4&gt;
+&lt;p&gt;So, which is it exactly?&lt;/p&gt;
+
+&lt;p&gt;One observation: Suppose &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Reasoning #2&lt;/code&gt; were correct. After you switch the envelopes once, the other envelope is more desirable (by the same expected-value calculation). So, you were better off in the first place.&lt;/p&gt;
+
+&lt;p&gt;This is absurd and further cements &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Reasoning #1&lt;/code&gt;. But this still doesn’t explain what is wrong with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Reasoning #2&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;The problem with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Reasoning #2&lt;/code&gt; is, when we say &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Envelope B&lt;/code&gt; has more money, the possible values for &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Envelope A&lt;/code&gt; &amp;amp; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Envelope B&lt;/code&gt; are in the set {₹X, ₹2X}. When we say &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Envelope B&lt;/code&gt; has less money, the set is {₹X, ₹X/2}. Hence, in the equation above, the meaning of X is different in ₹X/2 and ₹2X.&lt;/p&gt;
+
+&lt;p&gt;Look at it this way. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Envelope B&lt;/code&gt; either has more money or it has less money (duh!). So, the two cases are&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Envelope A&lt;/code&gt; has ₹Y and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Envelope B&lt;/code&gt; has ₹2Y.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Envelope A&lt;/code&gt; has ₹2Y and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Envelope B&lt;/code&gt; has ₹Y.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This way the expected value is the same with or without switching, ₹3/2Y. Which is consistent with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Reasoning #1&lt;/code&gt;!&lt;/p&gt;
+
+&lt;p&gt;Now, if the set {₹X, ₹X/2} is correct we get Y=X/2. For the set {₹X, ₹2X} we get Y=X. This inconsistency proves that the meaning of X is different in ₹X/2 and ₹2X. Thus, they can’t be added as we did in expected value calculation.&lt;/p&gt;
+
+&lt;p&gt;Here is an &lt;em&gt;even more&lt;/em&gt; surprising variant.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;What happens when you are allowed to inspect the contents of the envelope you choose first?&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3&gt;Random point in a circle&lt;/h3&gt;
+
+&lt;p&gt;I came across this problem while watching a video in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;The Summer of Math Exposition&lt;/code&gt; playlist.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;You are given a perfectly uniform random number generator &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;rng&lt;/code&gt;. Devise an algorithm to pick a random point within a unit circle.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;I paused the video and tried to come up with the solution.&lt;/p&gt;
+
+&lt;p&gt;First, I thought of placing unit circle in a plane centered at \((0,0)\). Then I came up with the easiest possible solution.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-C++&quot;&gt;while (true) {
+  double x = rng(-1, 1);
+  double y = rng(-1, 1);
+  if ((x*x + y*y) &amp;lt;= 1.0) {
+    return {x, y};
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;But I could overshoot the circle and land on fringes of the square. Probability of that would be \(\frac {4-\pi} 4\). Over a number of iterations that would tend to 0 but still, it isn’t perfect.&lt;/p&gt;
+
+&lt;p&gt;Then, I thought of leveraging \((r, \theta)\) representation.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-C++&quot;&gt;double radius = rng(0, 1);
+double theta = rng(0, 360);
+return {radius*cos(theta), radius*sin(theta)};
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Ah, the elegance! I smugly resumed the video.&lt;/p&gt;
+
+&lt;p&gt;This algorithm was faulty. Each radius [0, 1] has an equal probability of being picked. Imagine that every radius is mapped to a concentric ring. So, we basically pick a ring (via &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;radius&lt;/code&gt;) and then pick a point on its circumference (via &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;theta&lt;/code&gt;).&lt;/p&gt;
+
+&lt;p&gt;Now, the probability of any ring being picked is the same. But the rings with higher radius have a lot more points in the circumference, so ideally they should be chosen more often.&lt;/p&gt;
+
+&lt;p&gt;In other words, the points chosen by this algorithm will be concentrated to the center.&lt;/p&gt;
+
+&lt;p&gt;nubDotDev &lt;a href=&quot;https://youtu.be/4y_nmpv-9lI&quot;&gt;proposed&lt;/a&gt; an ingenious approach of converting the uniform &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;rng&lt;/code&gt; to a non-uniform &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;rng&lt;/code&gt;, that way the rings father away have a higher probability of being picked.&lt;/p&gt;
+
+&lt;p&gt;Moral: Be careful while calculating probabilities in an infinite sample space.&lt;/p&gt;
+
+&lt;h3&gt;Other paradoxes&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Bertrand posed a problem in his book, “What is the probability that a chord in unit circle is larger than \(\sqrt 3\)?”. The problem setting is straightforward and yet multiple &lt;a href=&quot;https://youtu.be/mZBwsm6B280&quot;&gt;simple solutions&lt;/a&gt; yield different answers, it is baffling! Calculating probabilities in infinite sample space is hard indeed.&lt;/li&gt;
+  &lt;li&gt;The most classic probability paradox - &lt;a href=&quot;https://en.wikipedia.org/wiki/Monty_Hall_problem&quot;&gt;Monty Hall problem&lt;/a&gt;. Even mathematicians of Paul Erdos’ calibre had a hard time wrapping their head around a problem popularized by a magazine column!&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;References&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Category:Probability_theory_paradoxes&quot;&gt;Wikipedia Category: Probability theory paradoxes&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content>
+
+      
+      
+      
+      
+      
+
+      
+        <author>
+            <name>Dibyadarshan</name>
+          
+          
+        </author>
+      
+
+      
+        <category term="probability" />
+      
+
+      
+        <category term="math" />
+      
+        <category term="cs" />
+      
+
+      
+        <summary type="html">Some problems in probability (and other related areas) could be challenging because using multiple seemingly correct approaches and your intuition could be at odds, each giving very different results. Here are some interesting problems.</summary>
+      
+
+      
+      
+    </entry>
+  
+  
+</feed>
